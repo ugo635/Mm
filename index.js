@@ -9,6 +9,7 @@ import "./features/Diana.js";
 import "./features/Mining.js";
 import "./features/Party.js";
 import mmSettingsData from "./settings";
+// import "./settings.js"
 
 register("gameLoad", () => {
     ChatLib.chat("&6&l[My Module] &r&7Module Loaded");

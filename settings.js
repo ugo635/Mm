@@ -43,8 +43,9 @@ import {
 class mmSettingsData {
     constructor() {
         this.initialize(this);
-        // this.addDependency("TheNameOfTheThingYouWannaAddDependencyTo", "TheDependency")
-        // this.addDependency("Inq Highlight color", "Inq highlight") for exemple inq highlight color needs inq highlight to be enabled
+        // this.addDependency("TheNameOfTheThingYouWannaAddDependencyTo", "TheNameOfTheDependency")
+        this.addDependency("Change stash action", "Stash message")
+        this.addDependency("Change stash open", "Change stash action")
     }
     //----------- General ----------------
     @SwitchProperty({
@@ -54,13 +55,66 @@ class mmSettingsData {
         subcategory: "Settings"
     })
     MySettingBool = true;
-    
+    @SwitchProperty({
+        name: "Show container inventory on click",
+        description: "Shows every item of a container when clicking with the container open",
+        category: "General",
+        subcategory: "Settings"
+    })
+    printContainerClick = false;
+    @SwitchProperty({
+        name: "Show container inventory when opened",
+        description: "Shows every item of a container when opening it",
+        category: "General",
+        subcategory: "Settings"
+    })
+    printContainerOpen = false;
+    @SwitchProperty({
+        name: "Hide falling blocks",
+        description: "Hides falling blocks (they won't appear on the screen)",
+        category: "General",
+        subcategory: "Settings"
+    })
+    hideFallingBlocks = false;
+    @SwitchProperty({
+        name: "Replace Ah message",
+        description: "Replaces the AH message when buying an item with a clickable one",
+        category: "General",
+        subcategory: "Settings"
+    })
+    replaceAhMsg = true;
+    @SwitchProperty({
+        name: "Stash message",
+        description: "Replace the stash message",
+        category: "General",
+        subcategory: "Settings"
+    })
+    stashMsg = true;
+    @SelectorProperty({
+        name: "Change stash action",
+        description: "Clicking on the stash action will change whether it will open the /viewStash or do /pickupstash",
+        category: "General",
+        subcategory: "Settings",
+        options: ["/viewStash", "/pickupStash"]
+    })
+    changeStashClickAction = 0;
+
+    @SelectorProperty({
+        name: "Change stash open",
+        description: "Change if it will show items or material (/viewStash item or /viewStash material)",
+        category: "General",
+        subcategory: "Settings",
+        options: ["Material", "Item"]
+    })
+    vsMatOrItem = 0;
 }
 
 export default new mmSettingsData();
 
 
 // Create the settings object (PogObject automatically loads the JSON file)
+
+
 // import PogObject from "../PogData";
 // export let mmSettingsData = new PogObject("Mm", {
 //     "printContainerClick": 0,

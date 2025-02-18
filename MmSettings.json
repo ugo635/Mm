@@ -1,0 +1,9 @@
+{
+    "printContainerClick": 0,
+    "printContainerOpen": 0,
+    "hideFallingBlocks": 1,
+    "replaceAhMsg": 1,
+    "stashMsg": 1,
+    "changeStashClickAction": 1,
+    "vsMatOrItem": "mat"
+}

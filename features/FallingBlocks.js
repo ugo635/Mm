@@ -4,7 +4,7 @@ import { mmSettingsData } from "../settings";
 
 
 register("command", () => {
-    mmSettingsData.hideFallingBlocks = mmSettingsData.hideFallingBlocks ? 0 : 1;
+    mmSettingsData.hideFallingBlocks = mmSettingsData.hideFallingBlocks ? false : true;
     mmSettingsData.save();
     ChatLib.chat(`&6&l[Mm] Hiding Falling Blocks: ${mmSettingsData.hideFallingBlocks ? "&aEnabled" : "&cDisabled"}`);
 }).setName("hideFallingBlocks").setAliases("hfb").setAliases("hideFallingBlock");
