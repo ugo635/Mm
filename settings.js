@@ -45,7 +45,8 @@ class mmSettingsData {
         this.initialize(this);
         // this.addDependency("TheNameOfTheThingYouWannaAddDependencyTo", "TheNameOfTheDependency");
         this.addDependency("Change stash action", "Stash message");
-        this.addDependency("Change stash open", "Change stash action");
+        this.addDependency("Change stash open", "Stash message");
+
     }
     //----------- General ----------------
     @SwitchProperty({
