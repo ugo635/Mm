@@ -54,6 +54,7 @@ class mmSettingsData {
         subcategory: "Settings"
     })
     MySettingBool = true;
+    
 }
 
 export default new mmSettingsData();

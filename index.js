@@ -3,11 +3,11 @@
 // import this file in the other files
 // import "./features/Features.js";
 // import "./features/inv.js";
-// import "./features/Diana.js";
+import "./features/Diana.js";
 // import "./features/Stash.js";
 // import "./features/FallingBlocks.js";
-// import "./features/Mining.js";
-// import "./features/Party.js";
+import "./features/Mining.js";
+import "./features/Party.js";
 import mmSettingsData from "./settings";
 
 register("gameLoad", () => {
