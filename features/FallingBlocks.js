@@ -1,5 +1,5 @@
 import { registerWhen } from "../../SBO/utils/variables";
-import { mmSettingsData } from "../settings";
+import mmSettingsData from "../settings";
 
 
 

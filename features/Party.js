@@ -95,7 +95,3 @@ register("chat", (player, number) => {
 register("chat", (player, event) => {
     ChatLib.command("chat p")
 }).setCriteria("You have joined ${player}'s party!")
-
-register("command", () => {
-    ChatLib.chat("&cThe /b command has been blocked!");
-}).setName("b", true)

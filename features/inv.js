@@ -1,6 +1,6 @@
 import { getplayername, formatTime, getDianaMayorTotalProfitAndOfferType, calcPercentOne, getBurrowsPerHour, getMobsPerHour, setTimeout } from "../../SBO/utils/functions";
 import { registerWhen } from "../../SBO/utils/variables";
-import { mmSettingsData } from "../settings";
+import mmSettingsData from "../settings";
 
 register("command", () => {
     ChatLib.chat(mmSettingsData.printContainerClick);
