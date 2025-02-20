@@ -87,9 +87,10 @@ register("command", (player) => {
 }).setName("checkLobby").setAliases("LobbyCheck");
 
 register("chat", (player, number) => {
+    if (number == 0 || number == 1 || number == 2 || number == 3 || number == 4) {
     let choice = ["basic", "hot", "burning", "fiery", "infernal"]
     ChatLib.command(`joininstance kuudra_${choice[number-1]}`)
-    
+    }
 }).setCriteria("Party > ${player}: !t${number}")
 
 register("chat", (player, event) => {
