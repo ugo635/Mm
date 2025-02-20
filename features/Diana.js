@@ -33,7 +33,6 @@ register("chat", (message) => {
     const regexWithoutNumber = /^Party > \[?[^\]]*\]?\s*(\w+): !mymf$/; // Matches only "!mymf"
 
     if (regexWithNumber.test(message)) {
-        // Case 1: "!mymf <number>"
         const match = message.match(regexWithNumber);
         const number = parseInt(match[2], 10);
         let mf = calculatemymffrome(number);
@@ -42,12 +41,10 @@ register("chat", (message) => {
             ChatLib.command(`pc [Mm] Your magic find is ${mf} on Inquisitors`);
         }, 200);
     } else if (regexWithoutNumber.test(message)) {
-        // Case 2: "!mymf"
         setTimeout(() => {
             ChatLib.command(`pc Usage: !mymf <number> (Go in mf set with no1 around (so legion ISNT active) with renowned armor, it will give your mf if you used shuriken, fragged dae axe with max bestiary)`);
         }, 200);
     } else {
-        // Case 3: Any other message (invalid format) -> Return without doing anything
         return;
     }
 }).setCriteria("${message}");
