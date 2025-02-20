@@ -2,6 +2,7 @@ import { getplayername, formatTime, getDianaMayorTotalProfitAndOfferType, calcPe
 import { data, dianaTrackerMayor } from "../../SBO/utils/variables";
 import { playCustomSound } from "../../SBO/utils/functions";
 import settings from "../../SBO/settings";
+import cmSettingData from "../settings";
 
 
 function calculatemymffrome(raw) {
@@ -19,7 +20,8 @@ register("command", (raw) => {
 
 
 register("chat", (player, x, y, z) => {
-    ChatLib.chat(`&6[Cm] Coords Detected`)
+    if (!cmSettingData.coords) return
+    ChatLib.chat(`&c&l[CoresModule] Coords Detected`)
     playCustomSound(settings.inqSound,100);
 }).setCriteria("Party > ${player}: x: ${x}, y: ${y}, z:${z}")
 
