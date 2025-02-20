@@ -13,13 +13,13 @@ register("command", (raw) => {
     let r = parseFloat(raw);
     let mf = calculatemymffrome(raw);
 
-    ChatLib.chat(`&6&l[Mm] Your magic find is ${mf} on Inquisitors`); // input ur mf with renowned sorrow, dae axe, greg avc // must have max be, legion V, renowned, shuriken
+    ChatLib.chat(`&6&l[Cm] Your magic find is ${mf} on Inquisitors`); // input ur mf with renowned sorrow, dae axe, greg avc // must have max be, legion V, renowned, shuriken
 
 }).setName("mymf");
 
 
 register("chat", (player, x, y, z) => {
-    ChatLib.chat(`&6[Mm] Coords Detected`)
+    ChatLib.chat(`&6[Cm] Coords Detected`)
     playCustomSound(settings.inqSound,100);
 }).setCriteria("Party > ${player}: x: ${x}, y: ${y}, z:${z}")
 
@@ -38,7 +38,7 @@ register("chat", (message) => {
         let mf = calculatemymffrome(number);
 
         setTimeout(() => { 
-            ChatLib.command(`pc [Mm] Your magic find is ${mf} on Inquisitors`);
+            ChatLib.command(`pc [Cm] Your magic find is ${mf} on Inquisitors`);
         }, 200);
     } else if (regexWithoutNumber.test(message)) {
         setTimeout(() => {

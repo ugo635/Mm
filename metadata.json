@@ -1,7 +1,7 @@
 {
-    "name": "Mm",
+    "name": "CoresModule",
     "creator": "JudgementCorePls",
-    "description": "Our first module!",
+    "description": "My first module!",
     "version": "1.0.0",
     "entry": "index.js"
 }

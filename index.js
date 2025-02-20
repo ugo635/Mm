@@ -1,7 +1,7 @@
 // Must import other files here for them to work properly 
 // OR 
 // import this file in the other files
-import mmSettingsData from "./settings";
+import cmSettingsData from "./settings";
 import "./features/Features.js";
 import "./features/inv.js";
 import "./features/Diana.js";
@@ -17,5 +17,5 @@ register("gameLoad", () => {
 });
 
 register("command", () => {
-    mmSettingsData.openGUI()
-}).setName("Mm")
+    cmSettingsData.openGUI()
+}).setName("Cm")

@@ -14,7 +14,7 @@ import {
 
 
 
-@Vigilant('Mm', 'MyModule', {
+@Vigilant('Cm', 'CoresModule', {
     getCategoryComparator: () => (a, b) => {
         // By default, categories, subcategories, and properties are sorted alphabetically.
         // You can override this behavior by returning a negative number if a should be sorted before b,
@@ -40,7 +40,7 @@ import {
     // }
 })
 
-class mmSettingsData {
+class cmSettingsData {
     constructor() {
         this.initialize(this);
         // this.addDependency("TheNameOfTheThingYouWannaAddDependencyTo", "TheNameOfTheDependency");
@@ -51,11 +51,17 @@ class mmSettingsData {
     //----------- General ----------------
     @SwitchProperty({
         name: "My Setting",
-        description: "Enable or disable my setting",
+        description: "Enable or disable my setting (just for debugging purposes)",
         category: "General",
         subcategory: "Settings"
     })
-    MySettingBool = true;
+    @SwitchProperty({
+        name: "Party Invite Message Editor",
+        description: "Edits party invite message to lyk if the guy is in your lobby",
+        category: "General",
+        subcategory: "Settings"
+    })
+    partyEdit = true;
     @SwitchProperty({
         name: "Show container inventory on click",
         description: "Shows every item of a container when clicking with the container open",
@@ -110,14 +116,14 @@ class mmSettingsData {
     vsMatOrItem = 0;
 }
 
-export default new mmSettingsData();
+export default new cmSettingsData();
 
 
 // Create the settings object (PogObject automatically loads the JSON file)
 
 
 // import PogObject from "../PogData";
-// export let mmSettingsData = new PogObject("Mm", {
+// export let cmSettingsData = new PogObject("Cm", {
 //     "printContainerClick": 0,
 //     "printContainerOpen": 0,
 //     "hideFallingBlocks": 0,
@@ -125,7 +131,7 @@ export default new mmSettingsData();
 //     "stashMsg": 1,
 //     "replaceStashMsg": 1,
 //     "vsMatOrItem": "mat",
-// }, "MmSettings.json");
+// }, "CmSettings.json");
 
 // // Save only if new defaults were added
-// mmSettingsData.save();
+// cmSettingsData.save();

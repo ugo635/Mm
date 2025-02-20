@@ -1,7 +1,7 @@
 import { getplayername, formatTime, getDianaMayorTotalProfitAndOfferType, calcPercentOne, getBurrowsPerHour, getMobsPerHour, setTimeout } from "../../SBO/utils/functions";
 import { data, dianaTrackerMayor } from "../../SBO/utils/variables";
 import { registerWhen } from "../../SBO/utils/variables";
-import mmSettingsData from "../settings";
+import cmSettingsData from "../settings";
 
 
 // classes / function
@@ -79,7 +79,7 @@ register("command", () => {
 
 register("chat", (message) => {
         if (message == "SPOOKY! A Trick or Treat Chest has appeared!") {
-        ChatLib.chat(`&6&l[Mm] Sooky Chest!`);
+        ChatLib.chat(`&6&l[Cm] Sooky Chest!`);
         Client.Companion.showTitle("&6&lSpooky Chest", "", 0, 25, 35);
         }
     
@@ -92,7 +92,7 @@ registerWhen(register("chat", (message, event) => {
     new TextComponent(msg).setClick("run_command", "/ah").setHover("show_text", "&eClick To Open The AH").chat();
     cancel(event);
     }
-}).setCriteria("${message}"), () => mmSettingsData.replaceAhMsg);
+}).setCriteria("${message}"), () => cmSettingsData.replaceAhMsg);
 
 register("command", () => {
 ChatLib.command("warp base")

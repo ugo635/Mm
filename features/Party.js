@@ -1,4 +1,7 @@
+import cmSettingsData from '../settings';
+
 register("chat", (player, event) => {
+    if (!cmSettingsData.partyEdit) return;
     let rawMsg = ChatLib.getChatMessage(event, true);
     color = "&7" // Default to grey (rankless)
     col = rawMsg.split("-----------------------------------------------------");
@@ -26,6 +29,7 @@ register("chat", (player, event) => {
 
 
 register("chat", (player, player2, event) => {
+    if (!cmSettingsData.partyEdit) return;
     let rawMsg = ChatLib.getChatMessage(event, true);
     color = "&7" // Default to grey (rankless)
     color2 = "&7"

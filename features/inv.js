@@ -1,11 +1,11 @@
 import { getplayername, formatTime, getDianaMayorTotalProfitAndOfferType, calcPercentOne, getBurrowsPerHour, getMobsPerHour, setTimeout } from "../../SBO/utils/functions";
 import { registerWhen } from "../../SBO/utils/variables";
-import mmSettingsData from "../settings";
+import cmSettingsData from "../settings";
 
 register("command", () => {
-    ChatLib.chat(mmSettingsData.printContainerClick);
-    ChatLib.chat(mmSettingsData.printContainerOpen);
-    ChatLib.chat(mmSettingsData.hideFallingBlocks);
+    ChatLib.chat(cmSettingsData.printContainerClick);
+    ChatLib.chat(cmSettingsData.printContainerOpen);
+    ChatLib.chat(cmSettingsData.hideFallingBlocks);
 }).setName("mysettings").setAliases("ms");
 
 
@@ -17,8 +17,8 @@ function readContainerItems() {
     const containerSize = container.getSize();
     if (items.length == 0) return;
 
-    ChatLib.chat("&6[Mm] &6&lGUI OPENED! &r&7" + container.getName());
-    ChatLib.chat("&6[Mm] Container Items:");
+    ChatLib.chat("&6[Cm] &6&lGUI OPENED! &r&7" + container.getName());
+    ChatLib.chat("&6[Cm] Container Items:");
     items.forEach((item, index) => {
         if (item && index <= containerSize - 37) { // -37 to not display inventory
             ChatLib.chat(`&7- ${item.getName()}`);
@@ -29,13 +29,13 @@ function readContainerItems() {
 
 // Register inventory click event based on settings
 register("guiMouseClick", () => {
-    if (mmSettingsData.printContainerClick) {
+    if (cmSettingsData.printContainerClick) {
         setTimeout(() => readContainerItems(), 400);
     }
 });
 
 register("guiOpened", () => {
-    if (mmSettingsData.printContainerOpen) {
+    if (cmSettingsData.printContainerOpen) {
         setTimeout(() => readContainerItems(), 300);
     }
 });
