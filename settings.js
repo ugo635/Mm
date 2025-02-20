@@ -14,7 +14,7 @@ import {
 
 
 
-@Vigilant('Cm', 'CoresModule', {
+@Vigilant('CoresModule', 'CoresModule', {
     getCategoryComparator: () => (a, b) => {
         // By default, categories, subcategories, and properties are sorted alphabetically.
         // You can override this behavior by returning a negative number if a should be sorted before b,

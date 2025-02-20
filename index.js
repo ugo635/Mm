@@ -13,7 +13,7 @@ import "./features/Party.js";
 // import "./settings.js"
 
 register("gameLoad", () => {
-    ChatLib.chat("&6&l[My Module] &r&7Module Loaded");
+    ChatLib.chat("&6&l[Cores Module] &r&7Module Loaded");
 });
 
 register("command", () => {
