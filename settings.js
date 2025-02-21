@@ -105,6 +105,20 @@ class cmSettingsData {
     })
     replaceAhMsg = true;
     @SwitchProperty({
+        name: "Coin flip",
+        description: "Flip a coin",
+        category: "General",
+        subcategory: "Settings"
+    })
+    cf = true;
+    @SwitchProperty({
+        name: "Dice",
+        description: "Roll a dice",
+        category: "General",
+        subcategory: "Settings"
+    })
+    dice = true;
+    @SwitchProperty({
         name: "Stash message",
         description: "Replace the stash message",
         category: "General",

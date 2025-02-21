@@ -115,11 +115,19 @@ register("tick", () => {
 })
 
 register("chat", (player) => {
+    if (!cmSettingsData.cf) return
     coin = Math.random() < 0.5 ? "heads" : "tails";
     ChatLib.command(`pc ${player.split(" ").length > 0 ? player.split(" ")[1] : player} flipped ${coin}`);
 }).setCriteria("Party > ${player}: !cf")
 register("chat", (player) => {
+    if (!cmSettingsData.cf) return
     coin = Math.random() < 0.5 ? "heads" : "tails";
     ChatLib.command(`pc ${player.split(" ").length > 0 ? player.split(" ")[1] : player} flipped ${coin}`);
 }).setCriteria("Party > ${player}: !coinflip")
+
+register("chat", (player) => {
+    if (!cmSettingsData.dice) return
+    dice = Math.floor(Math.random() * 6) + 1;
+    ChatLib.command(`pc ${player.split(" ").length > 0 ? player.split(" ")[1] : player} rolled ${dice}`);
+}).setCriteria("Party > ${player}: !dice")
 
