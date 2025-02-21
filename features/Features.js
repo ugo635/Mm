@@ -114,3 +114,12 @@ register("tick", () => {
     }
 })
 
+register("chat", () => {
+    coin = Math.random() < 0.5 ? "heads" : "tails";
+    ChatLib.chat(`&6&l[Cm] You flipped ${coin}`);
+}).setCriteria("Party > ${player}: !cf")
+register("chat", () => {
+    coin = Math.random() < 0.5 ? "heads" : "tails";
+    ChatLib.chat(`&6&l[Cm] You flipped ${coin}`);
+}).setCriteria("Party > ${player}: !coinflip")
+
