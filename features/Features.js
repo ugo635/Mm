@@ -138,5 +138,10 @@ register("chat", (player) => {
 }).setCriteria("Party > ${player}: !dice")
 
 register("chat", () => {
-    ChatLib.command('sboqueue')
+    ChatLib.command('sboqueue', true)
 }).setCriteria("Party > ${player}: !sboqueue")
+
+register("chat", (player, island, event) => {
+    if (!cmSettingsData.follow) return
+    cancel(event);
+}).setCriteria(" » ${player} is traveling to ${island} FOLLOW")
