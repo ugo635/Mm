@@ -84,6 +84,13 @@ class cmSettingsData {
     })
     printContainerOpen = false;
     @SwitchProperty({
+        name: "Dark Auction Alert",
+        description: "Send a message on screen 1min before Dark Auction",
+        category: "General",
+        subcategory: "Settings"
+    })
+    darkAuction = true;
+    @SwitchProperty({
         name: "Hide falling blocks",
         description: "Hides falling blocks (they won't appear on the screen)",
         category: "General",

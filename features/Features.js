@@ -101,6 +101,7 @@ ChatLib.command("warp base")
 let lastMinute = -1;
 
 register("tick", () => {
+    if (!cmSettingsData.darkAuction) return;
     let currentMinute = new Date().getMinutes();
     
     if (currentMinute === 54 && lastMinute !== 54) {

@@ -2,6 +2,7 @@
 [general]
 
 	[general.settings]
+		dark_auction_alert = true
 		my_setting = true
 		show_container_inventory_when_opened = false
 		show_container_inventory_on_click = false
