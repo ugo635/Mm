@@ -50,11 +50,20 @@ class cmSettingsData {
     }
     //----------- General ----------------
     @SwitchProperty({
-        name: "My Setting",
-        description: "Enable or disable my setting (just for debugging purposes)",
+        name: "Color Tag replacor",
+        description: "Enable or disable the color tag replacor",
         category: "General",
         subcategory: "Settings"
     })
+    colorTagTrue = true;
+    @SelectorProperty({
+        name: "Color Tag",
+        description: "Choose color tag (/color for example)",
+        category: "General",
+        subcategory: "Settings",
+        options: ["Black", "Dark Blue", "Dark Green", "Dark Aqua", "Dark Red", "Dark Purple", "Gold", "Gray", "Dark Gray", "Blue", "Green", "Aqua", "Red", "Light Purple / Pink", "Yellow"]
+    })
+    colorTag = 0;
     @SwitchProperty({
         name: "Party Invite Message Editor",
         description: "Edits party invite message to lyk if the guy is in your lobby",

@@ -3,7 +3,9 @@
 
 	[general.settings]
 		disable_warp_message = false
+		color_tag_replacor = true
 		dice = true
+		color_tag = 5
 		party_invite_message_editor = true
 		dark_auction_alert = true
 		my_setting = true
