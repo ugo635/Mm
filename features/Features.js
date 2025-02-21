@@ -114,12 +114,12 @@ register("tick", () => {
     }
 })
 
-register("chat", () => {
+register("chat", (player) => {
     coin = Math.random() < 0.5 ? "heads" : "tails";
-    ChatLib.chat(`&6&l[Cm] You flipped ${coin}`);
+    ChatLib.command(`pc ${player.split(" ").length > 0 ? player.split(" ")[1] : player} flipped ${coin}`);
 }).setCriteria("Party > ${player}: !cf")
-register("chat", () => {
+register("chat", (player) => {
     coin = Math.random() < 0.5 ? "heads" : "tails";
-    ChatLib.chat(`&6&l[Cm] You flipped ${coin}`);
+    ChatLib.command(`pc ${player.split(" ").length > 0 ? player.split(" ")[1] : player} flipped ${coin}`);
 }).setCriteria("Party > ${player}: !coinflip")
 
