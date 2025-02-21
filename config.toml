@@ -2,7 +2,6 @@
 [general]
 
 	[general.settings]
-		disable_warp_message = false
 		dice = true
 		party_invite_message_editor = true
 		dark_auction_alert = true

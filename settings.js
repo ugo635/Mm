@@ -98,13 +98,6 @@ class cmSettingsData {
     })
     jacob = true;
     @SwitchProperty({
-        name: "Disable Warp Message",
-        description: "Disable Warp messages ( » PLAYER is traveling to ISLAND FOLLOW)",
-        category: "General",
-        subcategory: "Settings"
-    })
-    follow = false;
-    @SwitchProperty({
         name: "Hide falling blocks",
         description: "Hides falling blocks (they won't appear on the screen)",
         category: "General",
