@@ -100,22 +100,25 @@ ChatLib.command("warp base")
 
 let lastMinute = -1;
 
-register("tick", () => {
+
+register("step", () => {
     if (!cmSettingsData.darkAuction || !cmSettingsData.jacob) return;
+    
     let currentMinute = new Date().getMinutes();
 
     if (currentMinute === 54 && lastMinute !== 54 && cmSettingsData.darkAuction) {
         Client.Companion.showTitle("&l&c Dark Auction", "", 0, 25, 35);
-        lastMinute = 54; // Prevent spam
+        lastMinute = 54;
     } else if (currentMinute === 15 && lastMinute !== 15 && cmSettingsData.jacob) {
         Client.Companion.showTitle("&l&d Jacob Starts!", "", 0, 25, 35);
-        lastMinute = 15; // Prevent spam
+        lastMinute = 15;
     }
 
     if (currentMinute !== lastMinute) {
-        lastMinute = currentMinute; // Reset tracker
+        lastMinute = currentMinute;
     }
-})
+}, 30);
+
 
 register("chat", (player) => {
     if (!cmSettingsData.cf) return
