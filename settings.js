@@ -21,7 +21,7 @@ import {
         // or a positive number if b should be sorted before a.
 
         // In this case, we can put Not general! to be above general.
-        const categories = ['General', 'Diana'];
+        const categories = ['General', 'Diana', 'Credits'];
 
         return categories.indexOf(a.name) - categories.indexOf(b.name);
     },
@@ -128,6 +128,17 @@ class cmSettingsData {
         options: ["Material", "Item"]
     })
     vsMatOrItem = 0;
+    // ----------- Credits ----------------
+    @ButtonProperty({
+        name: "Diacyz",
+        description: "Found the module name <3",
+        category: "Credits",
+        subcategory: "Credits",
+        placeholder: "Click Me"
+    })
+    openGithub() {
+        java.awt.Desktop.getDesktop().browse(new java.net.URI("https://github.com/ugo635/CoresModule"));
+    }
 }
 
 export default new cmSettingsData();
