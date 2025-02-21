@@ -101,15 +101,18 @@ ChatLib.command("warp base")
 let lastMinute = -1;
 
 register("tick", () => {
-    if (!cmSettingsData.darkAuction) return;
+    if (!cmSettingsData.darkAuction || !cmSettingsData.jacob) return;
     let currentMinute = new Date().getMinutes();
-    
-    if (currentMinute === 54 && lastMinute !== 54) {
+
+    if (currentMinute === 54 && lastMinute !== 54 && cmSettingsData.darkAuction) {
         Client.Companion.showTitle("&l&c Dark Auction", "", 0, 25, 35);
         lastMinute = 54; // Prevent spam
+    } else if (currentMinute === 15 && lastMinute !== 15 && cmSettingsData.jacob) {
+        Client.Companion.showTitle("&l&d Jacob Starts!", "", 0, 25, 35);
+        lastMinute = 15; // Prevent spam
     }
-    
-    if (currentMinute !== 54) {
+
+    if (currentMinute !== lastMinute) {
         lastMinute = currentMinute; // Reset tracker
     }
 })
@@ -131,3 +134,6 @@ register("chat", (player) => {
     ChatLib.command(`pc ${player.split(" ").length > 0 ? player.split(" ")[1] : player} rolled ${dice}`);
 }).setCriteria("Party > ${player}: !dice")
 
+register("chat", () => {
+    ChatLib.command('sboqueue')
+}).setCriteria("Party > ${player}: !sboqueue")

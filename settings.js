@@ -91,6 +91,13 @@ class cmSettingsData {
     })
     darkAuction = true;
     @SwitchProperty({
+        name: "Jacob Start Alert",
+        description: "Send a message on screen when Jacob Starts",
+        category: "General",
+        subcategory: "Settings"
+    })
+    jacob = true;
+    @SwitchProperty({
         name: "Hide falling blocks",
         description: "Hides falling blocks (they won't appear on the screen)",
         category: "General",
