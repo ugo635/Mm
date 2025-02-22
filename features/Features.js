@@ -57,7 +57,7 @@ register("command", () => {
     ChatLib.chat(`&eYellow: &e&lBold Yellow : &&ee`);
     ChatLib.chat(`&fWhite: &f&lBold White : &&ff`);
 
-    ChatLib.chat(`&kObfuscated : &&kk`);
+    ChatLib.chat(`&kObfuscated&r : &&kk`);
     ChatLib.chat(`&lBold : &&ll`);
     ChatLib.chat(`&mStrikethrough : &&mm`);
     ChatLib.chat(`&nUnderline : &&nn`);
@@ -192,10 +192,28 @@ const combinations = [
 register("chat", (msg, event) => {
     if (!cmSettingsData.colorTagTrue) return
     let message = ChatLib.getChatMessage(event, true)
+    console.log("Is textcomponent?" + message.TextComponent)
     if (msg.includes("MVP+") || msg.includes("VIP+")) {
+        if (cmSettingsData.colorTagTrue) {
         if (combinations.some(combination => message.includes(combination))) {
+            if (cmSettingsData.colorUserTrue) {
             const matchingCombination = combinations.find(combination => message.includes(combination));
-            message = message.replace(matchingCombination, (message.includes("MVP") ? `[MVP${colorDict[cmSettingsData.colorTag]}+&b] ${player}` : `[VIP${colorDict[cmSettingsData.colorTag]}+&a] ${player}`));
+            playerColor = colorDict[cmSettingsData.colorUser] + player
+            message = message.replace(matchingCombination, (message.includes("MVP") ? `[MVP${colorDict[cmSettingsData.colorTag]}+&b] ${playerColor}` : `[VIP${colorDict[cmSettingsData.colorTag]}+&a] ${playerColor}`));
+            ChatLib.chat(message)
+            cancel(event);
+            } else {
+                const matchingCombination = combinations.find(combination => message.includes(combination));
+                message = message.replace(matchingCombination, (message.includes("MVP") ? `[MVP${colorDict[cmSettingsData.colorTag]}+&b] ${player}` : `[VIP${colorDict[cmSettingsData.colorTag]}+&a] ${player}`));
+                ChatLib.chat(message)
+                cancel(event);
+            }
+        }
+    }
+    } else {
+        if (cmSettingsData.colorTagTrue && msg.includes(player)) {
+            const playerColor = colorDict[cmSettingsData.colorUser] + player
+            message = message.replace(player, playerColor);
             ChatLib.chat(message)
             cancel(event);
         }

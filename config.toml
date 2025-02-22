@@ -2,6 +2,7 @@
 [general]
 
 	[general.settings]
+		color_username = 5
 		disable_warp_message = false
 		color_tag_replacor = true
 		dice = true
@@ -9,6 +10,7 @@
 		party_invite_message_editor = true
 		dark_auction_alert = true
 		my_setting = true
+		color_username_replacor = true
 		show_container_inventory_when_opened = false
 		show_container_inventory_on_click = false
 		stash_message = true

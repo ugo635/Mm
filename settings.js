@@ -55,7 +55,7 @@ class cmSettingsData {
         category: "General",
         subcategory: "Settings"
     })
-    colorTagTrue = true;
+    colorTagTrue = false;
     @SelectorProperty({
         name: "Color Tag",
         description: "Choose color tag (/color for example)",
@@ -64,6 +64,21 @@ class cmSettingsData {
         options: ["Black", "Dark Blue", "Dark Green", "Dark Aqua", "Dark Red", "Dark Purple", "Gold", "Gray", "Dark Gray", "Blue", "Green", "Aqua", "Red", "Light Purple / Pink", "Yellow"]
     })
     colorTag = 0;
+    @SwitchProperty({
+        name: "Color Username replacor",
+        description: "Enable or disable the Username color replacor",
+        category: "General",
+        subcategory: "Settings"
+    })
+    colorUserTrue = false;
+    @SelectorProperty({
+        name: "Color Username",
+        description: "Choose color username (/color for example)",
+        category: "General",
+        subcategory: "Settings",
+        options: ["Black", "Dark Blue", "Dark Green", "Dark Aqua", "Dark Red", "Dark Purple", "Gold", "Gray", "Dark Gray", "Blue", "Green", "Aqua", "Red", "Light Purple / Pink", "Yellow"]
+    })
+    colorUser = 0;
     @SwitchProperty({
         name: "Party Invite Message Editor",
         description: "Edits party invite message to lyk if the guy is in your lobby",
