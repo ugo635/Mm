@@ -2,6 +2,7 @@ import { getplayername, formatTime, getDianaMayorTotalProfitAndOfferType, calcPe
 import { data, dianaTrackerMayor } from "../../SBO/utils/variables";
 import { registerWhen } from "../../SBO/utils/variables";
 import cmSettingsData from "../settings";
+import { playCustomSound } from "../../SBO/utils/functions";
 
 
 // classes / function
@@ -191,8 +192,7 @@ const combinations = [
 
 register("chat", (msg, event) => {
     if (!cmSettingsData.colorTagTrue) return
-    let message = ChatLib.getChatMessage(event, true)
-    console.log("Is textcomponent?" + message.TextComponent)
+    let message = ChatLib.getChatMessage(event, true);
     if (msg.includes("MVP+") || msg.includes("VIP+")) {
         if (cmSettingsData.colorTagTrue) {
         if (combinations.some(combination => message.includes(combination))) {
@@ -219,3 +219,20 @@ register("chat", (msg, event) => {
         }
     }
 }).setCriteria("${msg}")
+
+register("chat", (msg) => {
+    if (msg.includes("Aluakbar")) {
+        playCustomSound(AluakbarSound,100);
+    }
+}).setCriteria("${msg}")
+
+// register("chat", (msg, event) => {
+//     a = new TextComponent(event.message).getClickAction();
+//     b = new TextComponent(event.message).getClickValue();
+//     c = new TextComponent(event.message).getHoverAction();
+//     d = new TextComponent(event.message).getHoverValue();
+//     console.log(event.message, a, b, c, d)
+//     if (a && b && c && d) {
+//     new TextComponent("Hello").setClick(a, b).setHover(c, d).chat()
+//     }
+// }).setCriteria("${msg}")
